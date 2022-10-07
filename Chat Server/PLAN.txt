@@ -1,0 +1,91 @@
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+CIS 120 HW05 README
+PennKey: hrizwan3
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+
+============
+=: Task 2 :=
+============
+
+- Do you plan on creating any new classes in your design? If so, what classes
+  are you making, what do they store, and what behaviors do they have?
+
+  I created a Channel class that would hold the privacy state of the channel (bool),
+  the owner of the channel (string), the name of the channel (string), and a set of users within
+  the channel. You can add and remove users from the set, can get and set the channel owner names, and can
+  get and set the privacy of the channel.
+
+- How do you plan on storing what users are registered on the server?
+
+  I plan on storing them in a tree map with the Integer corresponding to their userId as the key
+  and the nickname as the value.
+
+- How do you plan on keeping track of which user has which user ID, considering
+  the fact that the user's nickname can change over the course of the program?
+
+  I plan on keeping the userId constant, as an invariant, with no way to change it once it is created.
+
+- How do you plan on storing what users are in a channel?
+
+  I plan on storing them in a set of strings.
+
+- How do you plan on keeping track of which user is the owner of each channel?
+
+  A separate string field.
+
+- Justify your choice of collections (Set, Map, or List) for the
+  collections you use in your design.
+
+  Map for users: userId is the key and the nickname is the value. easy to override the current value by simply
+  doing a .put function even if the same userId decides to change their name. Could also be done by having two linked
+  lists working in "parallel," but that would be a pain updating both values simultaneously when a new user is added or
+  deleted -- but it would be hard to keep invariants like having only one userid.
+  parallel sets would not work -- the order in which a userid and username appear must be preserved, though they do
+  preserve the invariant that you can only have one userId and unique nicknames.
+
+  sets for channels: must have unique channels, but the order in which they are stored does not matter.
+
+============
+=: Task 3 :=
+============
+
+- Did you make any changes to your design while doing this task? Why?
+
+  I did not. My design is flawless. Minus encapsulation. I don't know where I'm going wrong there (cry emoji).
+
+============
+=: Task 4 :=
+============
+
+- Did you make any changes to your design while doing this task? Why?
+
+  I did not. My design is flawless. Minus encapsulation. I don't know where I'm going wrong there (cry emoji).
+
+============
+=: Task 5 :=
+============
+
+- How do you plan on keeping track of which channels are invite-only?
+    A private state boolean within the channel class.
+
+- Will you make any changes to your work from before in order to make
+  implementing invite-only channels easier?
+
+  Yes, add a private state boolean.
+
+
+============
+=: Task 6 :=
+============
+
+- Did you have to make any changes to your design in Task 6? Why?
+    No, i simply did not.
+
+- If you were to redo this assignment, what changes (if any) would you make in
+  how you designed your code?
+
+  i would store the channels in a tree map instead of a tree set within the servermodel class,
+  with a string corresponding to the channel name be the key, and the channel object be the value.
+  this would make it easier to access channels, as currently i have to iterate over the entire set of channels
+  when i want to access a specific channel in the server model class.
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.2.1">
+<file name="C:\Users\hassa\Downloads\hw07_local_temp\src\main\java\org\cis120\Channel.java">
+<error line="5" column="43" severity="warning" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="49" column="36" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
+</file>
+<file name="C:\Users\hassa\Downloads\hw07_local_temp\src\main\java\org\cis120\ServerModel.java">
+<error line="3" column="8" severity="warning" message="Unused import - com.sun.source.tree.Tree." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="5" column="8" severity="warning" message="Unused import - java.nio.channels.Channels." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="C:\Users\hassa\Downloads\hw07_local_temp\src\test\java\org\cis120\ServerModelTest.java">
+</file>
+</checkstyle>
